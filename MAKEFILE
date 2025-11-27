@@ -1,0 +1,13 @@
+CC=gcc
+CFLAGS=-Iinclude -Wall
+
+SRC=$(wildcard src/*.c)
+OBJ=$(SRC:.c=.o)
+
+all: converter
+
+converter: $(OBJ)
+	$(CC) $(OBJ) -o converter
+
+clean:
+	rm -f src/*.o converter
